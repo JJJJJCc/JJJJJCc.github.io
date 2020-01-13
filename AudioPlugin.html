@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   
+  <link href="https://web.stanford.edu/class/archive/cs/cs107/cs107.1202/assets/stylesheet.css" rel="stylesheet">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>-->
+  <title>Software::Audio Effect</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel ="shortcut icon" type = "image/png" href = "img/wt.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Trochut&display=swap" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+  <link href="https://fonts.googleapis.com/css?family=Trochut&display=swap" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">-->
+<style>
+
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Lato', sans-serif;}
+body, html {
+    height: 100%;
+    color: #303030;
+    line-height: 1.8;
+}
+.w3-bar-item{
+  font-family: 'Trochut', cursive;
+  font-size: 15px;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+/*center the image*/
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.w3-wide {letter-spacing: 6px;}
+.w3-hover-opacity {cursor: pointer;}
+
+</style>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+
+<body>
+<header class="w3-center w3-black w3-padding-32 w3-hover-opacity">
+  <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="software.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lightbulb-o"></i> Back Software</a>
+    </a>
+  </div>
+    <p></p>
+</header>
+
+</div>
+
+<!-- First Parallax Image with Logo Text. -->
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+<h3 class="w3-center"><b>Audio Effect plugins</b></h3>
+<p>Based on Music 424: Signal Processing for Audio Digital Effect<a href="https://ccrma.stanford.edu/courses/424/"></a>, theories, design are taught for various Audio Effects used in DAWs : Compressor, Delay and Delay based effects, Modulation, Wah-Wah, distortion and Equalizer etc. The contents below show the implementation of selected audio plugins by using JUCE framework.
+</p>
+<h4>Ring Modulation</h4>
+The Ring Modulation is where the audio modulator signal,\(x(n)\) is multiplied by a sine wave,\(m(n)\), with a carrier frequency,\(f_c\), so the equation can be written as below:
+\[y[n] = x[n]\cdot m[n] = x[n]\cdot \sin(2\pi f_c n/N)\]
+In order to control the depth of the ring modulation, we can have the parameter "Depth":
+\[y[n] = x[n]\cdot ((1 - d) + d\cdot m[n])\]
+In the JUCE implementation<br>
+<div class = "w3-center">
+<video width="500" height="200" controls>
+  <source src="img/ringm.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+</video>
+</div>
+<h4>Tremelo</h4>
+The Tremelo effect is similar to the Ring modulation but the carrier signal is a LFO above the x axis, thus, we can make our sine signal as \[m[n] = 0.5 + 0.5\sin(2\pi n/N)\]
+<h5>⭐️Implementing a lfo</h5>
+In juce, we can write a lfo in <code>AudioProcessor</code> class as below:
+<pre>
+float AudioProcessor::LFO (float phase, int waveform)
+{
+    float out = 0.0f;
+
+    switch (waveform) {
+        case waveformSine: {
+            out = 0.5f + 0.5f * sinf (twoPi * phase);
+            break;
+        }
+        case waveformTriangle: {
+            if (phase < 0.25f)
+                out = 0.5f + 2.0f * phase;
+            else if (phase < 0.75f)
+                out = 1.0f - 2.0f * (phase - 0.25f);
+            else
+                out = 2.0f * (phase - 0.75f);
+            break;
+        }
+        case waveformSawtooth: {
+            if (phase < 0.5f)
+                out = 0.5f + phase;
+            else
+                out = phase - 0.5f;
+            break;
+        }
+        case waveformInverseSawtooth: {
+            if (phase < 0.5f)
+                out = 0.5f - phase;
+            else
+                out = 1.5f - phase;
+            break;
+        }
+    }
+
+    return out;
+}
+</pre>
+<div class = "w3-center">
+<video width="500" height="300" controls>
+  <source src="img/tremolo.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+</video>
+</div>
+<h4>Delay/Chorus</h4>
+<h5>⭐️Implementing a delay line</h5>
+In order to achieve a delay, we need a delay line, and we can use <code>AudioSampleBuffer</code> class in JUCE
+The delay line can be implemented as a ring buffer. The following Figure illustrates how it works.<br>
+<div class = "w3-center">
+<img src = "img/delay.png" width = 360></img>
+</div>
+
+<br> Assuming the input signal is simply \([1,2,3,4,5,6,7,8]\), and this signal go through of a delay line for 2-sample delay. It means that the output signal should be \([0,0,1,2,3,4,5,6,7,8]\). To implement the delay line, we need to create a delay buffer, the buffer length is the maximum delay length. In this case, we can implement the 0~8 sample delay by using this delay line. When the delay is 2-sample, we need initalizes a <code>read pointer</code> at the position of <code>writePosition - currentDelay + delayBufferSize</code> while a <code>write pointer</code> at the position of index 0.(writePosition at 0, read position at 0-2+8 = 6), when the pointers go beyond the capacity of buffer, they go back from the front (it works a ring, circularly).<br> When \(n = 0\), <code>write pointer</code> writes the input[0] to the delayBuffer[0], <code>read pointer</code> reads 0 from delayBuffer[6].<br>When \(n = 1\), <code>write pointer</code> writes the input[1] to the delayBuffer[1], <code>read pointer</code> reads 0 from delayBuffer[7].<br>When \(n = 2\), <code>write pointer</code> writes the input[2] to the delayBuffer[2], <code>read pointer</code> reads 1 from delayBuffer[0].<br>...<br>until all samples pass the delay line.</p>
+<h5>⭐️Delay Line Interpolation: Linear Interpolation</h5>
+The previous discussion was based on the use of digital delay lines with integer sample delay lengths(but we usually have a fractional delay length). Thus, it is necessary to compute the output of a delay line at fractional delay-line lengths. 
+<br> Linear interpolation can be achieved as:
+\[\hat{y[n-\Delta]} = y[n] + \Delta\cdot(y[n-1]-y[n])\]
+Then the code implementation:
+<pre>
+  float fraction = readPosition - (float)localReadPosition; //delta
+  float delayed1 = delayData[(localReadPosition + 0)];
+  float delayed2 = delayData[(localReadPosition + 1) % delayBufferSamples];
+  out = delayed1 + fraction * (delayed2 - delayed1);
+
+  channelData[sample] = in*(1-currentMix) + currentMix * out;
+  delayData[localWritePosition] = in + out * currentFeedback;
+</pre>
+<h5>⭐️Chorus</h5>
+The chorus is actually the multiple copies of sound delayed by small random delays. To introduce varying delay time, we can use different LFO to modulates the delay time and then adding together. 
+<pre>
+float localDelayTime =
+(currentDelay + lfo (phase + phaseOffset, (int)paramWaveform.getTargetValue())) * (float)getSampleRate();
+//paramWaveform.getTargetValue() is the lfo choices from GUI.
+</pre>
+The demo of delay and chorus is shown as below:
+<div class = "w3-center">
+<video width="500" height="200" controls>
+  <source src="img/delay.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+</video>
+</div>
+<h4>Pitch Shift</h4>
+For the pitch shift effect, we need to manipulate the signal in frequency domain. Also, because the signal cannot be constant frequency for all the length, so we need to know what pitch for every signal segment. Therefore, Short Time Fourier Transform (STFT) should be introduced.
+<br>The STFT\(X[\mu,n]\)can be defined as:\[X[\mu,n]=\sum^{n+n-1}_{k=n}x[k]w[k-n]w^{k\mu}_N\]
+<h5>⭐️Overlap Add STFT</h5>
+The following Figure shows How STFT works.<br></br>
+<div class = "w3-center">
+	<img src = "img/stft.png" width="450"></img>
+</div>
+Several variables we need to define:
+<ul>
+  <li>window length \(M\). It is available to use various window types<code>Hanning</code>, <code>Hamming</code>, <code>Blackman</code></li>
+  <li>hopSize (Illustrated in orange color).</li>
+  <li>overlapSize (Illustrated in pink color)</li>
+</ul>  
+<div class = "w3-center">
+<video width="500" height="200" controls>
+  <source src="img/pitchshift.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+</video>
+</div>
+<h4>Panning</h4>
+<p>
+There are several techniques to achieve panning effect, here discusses two method: <b>Panorama and Precedence</b> / <b>ITD and ILD</b>
+<h6>Panorama and Precedence</h6>
+The following Figure shows the listener and loudspeakers configuration for placing a sound source using level difference.
+<div class="w3-center">
+<img src="img/pan.png" width="400"></img>
+</div>
+<br>Then we can express the Loudspeaker position as: \[l1 = [\cos\theta\space\sin\theta], l2 = [\cos\theta\space-\sin\theta]\]panning position as: \[p = [p_1 p_2] = gL\]Thus the gain pointing to the loudspeakers can be written as: \[[g_1\space g_2] = [\cos\phi\sin\theta+\sin\phi\cos\theta\space\space\cos\phi\sin\theta-\sin\phi\cos\theta]\]
+Then we are going to use Precedence(Time difference level) to write the left and right channel data. We can calculate the delay time between left and right channel by using <code>delayFactor*maxDelaySample</code>
+
+</p>
+<h4>Echo/Reverb</h4>
+The Echo impulse response can be shown as below:
+\[h(n) = \delta(n) + \gamma\delta(n-\tau)\]
+where \(\gamma = 0.9\) and \(\tau = [1,2,4,8,...,512,1024] ms\). According to the human-ear time differentiating ability, we usually choose the value of \(tau\) larger than \(8ms\). 
+<br></br>Then the simple reverb can be implemented by applying an exponential envelope to Gaussian noise. For example, we can form two impulse responses, each 4.0 seconds long, one having an exponential decay with a 60-dB decay time of 1.0 seconds, and the other having a T60 of 4.0 seconds.
+Here is the MATLAB code:
+<pre>fs = 44100;
+ran = randn(1,4*fs);
+t = [0:1/fs:4-1/fs];
+tau = [1/6.91 4/6.91];
+ir = [exp(-t/tau(1)).*ran;exp(-t/tau(2)).*ran];
+</pre>
+
+<h4>Reference</h4>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16 w3-hover-opacity" style = "font-family: 'Trochut', cursive;">
+  <p>CHEN JI @2019</a></p>
+</footer>
+
+  <script src="https://web.stanford.edu/class/archive/cs/cs107/cs107.1202/assets/tocbot.min.js"></script>
+  <link rel="stylesheet" href="https://web.stanford.edu/class/archive/cs/cs107/cs107.1202/assets/tocbot.css">
+
+  <script>
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '#toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '#main_for_toc',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h1, h2, h3',
+    });
+  </script>
+</div>
+    </main>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
+
