@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>With You</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel ="shortcut icon" type = "image/png" href = "img/wt.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Trochut&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Trochut&display=swap" rel="stylesheet">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Lato', sans-serif;}
+body, html {
+    height: 100%;
+    color: #303030;
+    line-height: 1.8;
+}
+.w3-bar-item{
+  font-family: 'Trochut', cursive;
+  font-size: 15px;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+p{
+    font-family: 'Trochut', cursive;
+  font-size: 15px;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+</style>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+
+<body>
+<header class="w3-center w3-black w3-padding-32 w3-hover-opacity">
+  <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar" style="line-height: 3;">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="unity.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Back Unity Project</a>
+    </a>
+  </div>
+    <p></p>
+</header>
+</div>
+
+<!-- First Parallax Image with Logo Text. -->
+<h3 class = "w3-center" style = "font-family: 'Trochut', cursive;"><b>With You</b></h3>
+<p class="w3-center">This is an ineractive audio-visual unity project, which simulates the trip to Death Valley. Here comes the demo video!</p>
+<div class = "w3-center">
+   <div style="margin: 0 auto; display: table;">
+     <video width="480" height="360" controls>
+     <source src="img/withYou.mp4" type="video/mp4">
+      <source src="mov_bbb.ogg" type="video/ogg">
+     </video>
+     </div>
+     <br></br>
+<p class="w3-center"></p>
+<h4 style = "font-family: 'Trochut', cursive;">Interactive Control</h4>
+<div class = "w3-center" style = "font-family: 'Trochut', cursive;">
+    <li><b>Rhythmic Mountain</b>: the mountain changes the height real-time according to music volume<br>/Frequency spectrum of audio to make a Rhythmic various moutain.</li>
+    <li><b>Flying Perspective</b>: You can control your flying trajectory along the road by using mouse (direction)<br> and foward, behind, left and right</li>
+</div>
+<br></br>
+<h4 style = "font-family: 'Trochut', cursive;">Application that you can experience</h4>
+<p class="w3-center">Click <a href="https://drive.google.com/drive/folders/1lIVV_xmvCu4g_OciRBX0NFT3QESZgsGW?usp=sharing">here</a> to download the application!</p>
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16 w3-hover-opacity" style = "font-family: 'Trochut', cursive;">
+  <p>CHEN JI @2019</a></p>
+</footer>
+</body>
+</html>
+

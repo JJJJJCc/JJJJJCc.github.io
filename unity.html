@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Projects</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel ="shortcut icon" type = "image/png" href = "img/wt.png">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Trochut&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Trochut&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cuprum&display=swap" rel="stylesheet">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: 'Cuprum', sans-serif;}
+body, html {
+    height: 100%;
+    color: #303030;
+    line-height: 1.8;
+}
+.w3-bar-item{
+  font-family: 'Trochut', cursive;
+  font-size: 15px;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('img/bg.mp4');
+    min-height: 100%;
+}
+
+.zoom:hover {
+  opacity: 0.7;
+  transform: scale(1.1); 
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+</style>
+<link href="jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<body style="background-color:rgb(255, 225, 223);">
+<header class="w3-center w3-black w3-padding-32 w3-hover-opacity">
+  <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar" style="line-height: 3;">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-home"></i> Home</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> About</a>
+    <a href="unity.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lightbulb-o"></i> Interactive Projects</a>
+    <a href="art.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lightbulb-o"></i> Art</a>
+    <a href="software.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lightbulb-o"></i> Software</a>
+    <a href="music.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-music"></i> Music</a>
+    </a>
+  </div>
+    <p></p>
+</header>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  <div class="w3-row-padding w3-padding-16 w3-center">
+      <div class="w3-third">
+      <a href="sakura.html"><img class="zoom" src="img/sakura.png" alt="audioEffect" style="width:90%">
+      <h4 style="font-family: 'Cuprum', sans-serif;">Sakura: VR Game</h4>
+      </a>
+      <p style="text-align: left; width:90%; display: inline-block; font-family: 'Cuprum', sans-serif; ">This is an exploration game in VR formate, where users can talk around and find objects around. Trigger them to wake uo this silent world. Also, you are able to input MIDI signal to play music in the scene. Audio effect like chorus, delay, echo and reverb can be added to the room where you play the music.</p>
+    </div>
+
+      <div class="w3-third">
+      <a href="withyou.html"><img class="zoom" src="img/u.png" alt="audioEffect" style="width:90%">
+      <h4 style="font-family: 'Cuprum', sans-serif;">With You</h4>
+      </a>
+      <p style="text-align: left; width:90%; display: inline-block; font-family: 'Cuprum', sans-serif;">This is an ineractive audio-visual unity project, which simulates the trip to Death Valley. The intro scene leads you crossing the sea and flying to the sky and then touch the stars, which makes you enter the main theme. The scene building is in low-poly style.</p>
+    </div>
+    <div class="w3-third">
+      <a href="https://ccrma.stanford.edu/~jjjjjc/256a/MusicFlow.html"><img class="zoom" src="img/flow.png" alt="musicFlow" style="width:90%">
+      <h4 style="font-family: 'Cuprum', sans-serif;">Music Flow</h4>
+      </a>
+      <p style="text-align: left; width:90%; display: inline-block; font-family: 'Cuprum', sans-serif;">Instrument-karaoke application in a Galaxy-look scene. You can load any your favorite music and then you can improvise the music by using the keyboard typing. At the mean time, you can enjoy the audio-visualization on the screen.</p>
+    </div>
+   
+  </div>
+ <br></br>
+ <div class="w3-row-padding w3-padding-16 w3-center">
+       <div class="w3-third">
+      <a href="https://ccrma.stanford.edu/~jjjjjc/256a/hw2.html"><img class="zoom" src="img/octave.png" alt="octave" style="width:90%">
+      <h4 style="font-family: 'Cuprum', sans-serif; ">Ocatve</h4>
+      </a>
+      <p style="text-align: left; width:90%; display: inline-block; font-family: 'Cuprum', sans-serif;">Designed a "penrose step" shape of music sequence and rendered graphics with Unity engine. Real-time audio sequencer functionality and the interactivity that users are able to input the notes by using keyboard.</p>
+    </div>
+  </div>
+  </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16 w3-hover-opacity" style = "font-family: 'Trochut', cursive;">
+  <p>CHEN JI @2019</a></p>
+</footer>
+</body>
+</html>
