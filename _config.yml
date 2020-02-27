@@ -1,0 +1,23 @@
+# Google Analytics Tracking ID
+google_analytics:
+
+# Default portfolio post
+default_cover_image: images/unsplash.jpg
+default_post_title: Portfolio Item
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: edinburgh
+
+# Header
+menu:
+  About: /about
+  Contact: /contact
+  Instagram: https://www.instagram.com
+  LinkedIn: https://www.linkedin.com
+  Facebook: https://www.facebook.com
+
+title: Chen Ji
+
+cover_image: /images/portfolio.jpg
