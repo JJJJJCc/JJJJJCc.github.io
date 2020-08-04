@@ -1,5 +1,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
+	padding-left: 8%;
+	padding-right: 8%;
 }
 
 form {
@@ -36,6 +38,11 @@ input, textarea {
 input:focus, textarea:focus {
   border-color: #777;
   outline: none;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
 
 .halfwidth {
