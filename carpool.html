@@ -44,29 +44,37 @@
   <body>
     <div class="container-fluid navbar-container m-sm-5">
       <!-- Header -->
-      <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
-  <a class="navbar-brand ml-2" href="index.html">Chen Ji</a>
-  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
-    <ul class="navbar-nav ml-auto my-auto">
-      
-         <li class="nav-item">
-          <a class="nav-link" href="index.html">Work</a>
-        </li>
-      
-        <li class="nav-item">
-          <a class="nav-link" href="music.html">Music</a>
-        </li>
+ <header class="heading">
+  <h1>Chen Ji</h1>
+  <div id="box">
+      <div class="front"></div>
+      <div class="back"></div>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="top"></div>
+      <div class="bottom"></div>
+    </div>
+  <p> Amplify Human Experiences through Music, Deisgn, Play and Technology</p> 
+</header>
 
-
-        <li class="nav-item">
-          <a class="nav-link" href="me.html">About</a>
-        </li>
-      
-    </ul>
-    <hr class="hidden-md-up" />
+<nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse text-center"id="navbarCollapse">
+        <ul class="navbar-nav ml-auto my-auto">
+             <li class="nav-item">
+              <a class="nav-link"  href="index.html">Work</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link"  href="publication.html">Publications</a>
+            </li>      
+            <li class="nav-item">
+              <a class="nav-link" href="music.html">Music</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="me.html">About</a>
+            </li>
+        </ul>
+      </div>
   </div>
 </nav>
 
@@ -97,7 +105,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script>
   $(window).on( 'resize', function () {
-    $('.halfwidth').height( $(window).width() / 2.6);
+    $('.halfwidth').height( $(window).width() / 2.7);
 }).resize();
 </script>
 
