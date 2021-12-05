@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+<link rel="icon" href="assets/img/bb.png">
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Chen Ji</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a style= "font-size: 30px;" href="index.html" class="nav__logo">Hey, this is 🍊</a>
+                </div>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="project.html" class="nav__link">Projects</a></li>
+                        <li class="nav__item"><a href="publication.html" class="nav__link">Publications</a></li>
+                        <li class="nav__item"><a href="music.html" class="nav__link">Music</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home" id="home">
+
+                <img style = "width: 85%; z-index: 0; position: absolute;left: 25%; top:15%;"src="assets/img/b.gif" alt="" >
+                <img style = "width: 10%; z-index: 1; position: absolute;right: 14%; top:20%;"src="assets/img/game.png" alt="" data-speed="-2" class="move">
+                <img style = "width: 20%; z-index: 1; position: absolute;right: 40%; bottom: 1%;"src="assets/img/guitar.png" alt="" data-speed="1" class="move">
+
+                <div style = "z-index:5 position: absolute;left: 25%" class="home__container bd-grid">
+                   
+                    <div class="home__img">
+                        <img style = "z-index:5 position: absolute;left: 0"src="assets/img/me1.gif" >
+                        
+                    </div>
+  
+                    <div class="home__data">
+                        <h1 class="home__title">Chen 🍊<br> Ji</h1>
+                        <p class="home__description">Amplify Human Experiences through Music, Deisgn,<br> Play and Technology.</p>
+                        <a href="project.html" class="home__button">View Projects</a>
+                    </div>
+                </div>
+                
+            </section>
+        </main>
+
+        <!--===== GSAP =====-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+        <script>
+        	
+
+			function loadImages() {
+				var images[60];
+			  for(var i=0;i<60;i++) {
+			    images[i] = new Image();
+			    images[i].src = "assets/img/bubble/000"+i+".png";
+			  }
+			}
+
+
+        </script>>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+<link rel="icon" href="assets/img/bb.png">
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        
+  
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.12/css/all.css'>
+<link rel="stylesheet" href="assets/scss/style.css">
+
+        <title>Chen Ji</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a style= "font-size: 30px;" href="#" class="nav__logo">🍊</a>
+                </div>
+                
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <div class="nav__close" id="nav-close">
+                        <i class='bx bx-x'></i>
+                    </div>
+
+                    <ul class="nav__list">
+                          <li class="nav__item"><a href="index.html" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="project.html" class="nav__link">Projects</a></li>
+                        <li class="nav__item"><a href="publication.html" class="nav__link">Publications</a></li>
+                        <li class="nav__item"><a href="music.html" class="nav__link">Music</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+
+
+<section class="gallery">
+  <div class="container">
+    <div class="grid">
+      <div style="padding-top: 8rem;"class="column-xs-12 column-md-6">
+        <figure class="img-container">
+          <img src="assets/img/sun.gif"/>
+  
+        </figure>
+
+      </div>
+
+      <div style="padding-top: 8rem;"class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/fly.gif" />
+          
+        </figure>
+      </div>
+       <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+          <img src="assets/img/planet.gif" />
+          
+        </figure>
+      </div>
+     
+      <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+          <img src="assets/img/green.gif" />
+        </figure>
+      </div>
+      <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/robot.gif" />
+        </figure>
+      </div>
+           <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/bear.gif" />
+        </figure>
+      </div>
+           <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/orange.png" />
+        </figure>
+      </div>
+
+        <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/Mysofa.png" />
+        </figure>
+      </div>
+             <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/xmas.png" />
+        </figure>
+      </div>
+
+                   <div class="column-xs-12 column-md-6">
+        <figure class="img-container">
+         <img src="assets/img/mr.biscuit.png" />
+        </figure>
+      </div>
+
+          <div class="column-xs-12 column-md-5">
+        <figure class="img-container">
+         <img src="assets/img/milk.jpg" />
+        </figure>
+      </div>
+              <div class="column-xs-12 column-md-7">
+        <figure class="img-container">
+         <img src="assets/img/scene1.png" />
+        </figure>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+        
+        </main>
+        <script type="text/javascript">
+            const imgContent = document.querySelectorAll('.img-content-hover');
+
+function showImgContent(e) {
+  for(var i = 0; i < imgContent.length; i++) {
+    x = e.pageX;
+    y = e.pageY;
+    imgContent[i].style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  }
+};
+
+document.addEventListener('mousemove', showImgContent);
+        </script>
+
+        <!--===== GSAP =====-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
