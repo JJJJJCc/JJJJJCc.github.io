@@ -624,6 +624,12 @@ footer img {
 
 
 /* ===== MEDIA QUERIES =====*/
+@media (max-width: 1000px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
 @media screen and (min-width: 768px){
   body{
     margin: 0;
