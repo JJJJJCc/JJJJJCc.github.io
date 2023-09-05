@@ -5,6 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Kiwi+Maru:wght@300&display=swap');
+
 
 @font-face {
   font-family: SF_pro_rounded_bold;
@@ -23,6 +27,15 @@
   src: url("../font/SF-Pro-Display-Regular.otf");
 }
 
+@font-face {
+  font-family: GT-Pressura-Black;
+  src: url("../font/GT-Pressura-Black-Trial.otf");
+}
+@font-face {
+  font-family: GT-Pressura-Mono-Light;
+  src: url("../font/GT-Pressura-Mono-Light-Trial.otf");
+}
+
 /*===== VARIABLES CSS =====*/
 :root{
   --header-height: 3rem;
@@ -32,14 +45,7 @@
   --first-color-dark: black;
   --first-color-darken: black;
   --white-color: black;
-  
-  /*===== Font and typography 'Lora', serif;=====*/
 
-  --body-font: 'Lora', serif;
-
-  /*--body-font: 'Poppins', sans-serif;*/
-  --big-font-size: 2.5rem;
-  --normal-font-size: .938rem;
   
   /*===== z index =====*/
   --z-fixed: 100;
@@ -713,6 +719,180 @@ footer img {
     display: block;
   }
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap');
+
+@font-face {
+  font-family: SF_pro_rounded_regular;
+  src: url("../font/SF-Pro-Rounded-Regular.otf");
+}
+
+@font-face {
+  font-family: SF_pro_rounded_bold;
+  src: url("font/SF-Pro-Rounded-Semibold.otf");
+}
+
+
+a{
+  color: inherit;
+  text-decoration: inherit;
+}
+a:hover{
+  font-weight: bold;
+}
+
+.project_container{
+  position: relative;
+  max-width: 50rem;
+  margin: 2rem auto;
+  background: #EDF0EE;
+  overflow: hidden;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: 0px 12px 16px -8px rgba(0,0,0,0.2);
+}
+.header{
+  margin-left: 2.5rem;
+  background-color: #e5e5e5;
+}
+
+.main{
+  box-sizing: border-box;
+  width: calc(100% - 3.5rem);
+  padding: 3.5rem;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.nav__ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__li a{
+  text-decoration: none;
+  color: inherit;
+}
+.nav--primary{
+  width: calc(100% - 3.5rem);
+}
+.nav--primary .nav__ul{
+  display: flex;
+  flex-flow: row wrap;
+}
+.nav--primary .nav__li{
+  box-sizing: border-box;
+  flex: 1 1 50%;
+  padding: 2rem 1.2rem 1rem 1.2rem;
+}
+.nav--primary .nav__li:nth-child(1){
+  border-left: 2px solid rgba(0,0,0,0.010);
+}
+.nav--primary .nav__li:nth-child(2){
+  border-radius: 0 5px 0 0;
+}
+.nav--primary .nav__li:nth-child(3){
+  border-left: 2px solid rgba(0,0,0,0.010);
+}
+.nav__li--top{
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #E5EBEB;
+}
+.nav__li--bottom{
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(0,0,0,0.005);
+  background-color: #E0E2E1;
+}
+
+.nav--secondary{
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3.5rem;
+  height: 100%;
+  background-color: #e5e5e5;
+  display: flex;
+  align-items: flex-start;
+  background: linear-gradient(to right, rgba(224,224,224,1) 0%, rgba(229,229,229,1) 16%, rgba(229,229,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#e5e5e5', GradientType=1 );
+}
+.nav__ul--rotate{
+  display: flex;
+  transform: rotate(-90deg) translateX(-9.5rem);
+  flex-direction: row-reverse;
+  width: 100%;
+  align-self: flex-start;
+}
+.nav__ul--rotate .nav__li{
+  box-sizing: border-box;
+  flex: 1 0 16em;
+  margin: 0;
+  margin-top: 1rem;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  border-right: 1px solid #b1b1b1;
+  text-align: right;
+  height: 3rem;
+}
+
+.h--border{
+  margin-top: 0;
+  padding-top: 1rem;
+  border-top: 1px solid #b1b1b1;
+}
+.h--x-large,
+.h--large{
+  font-weight: normal;
+  font-size: 3.875rem;
+}
+.h--large{
+  font-size: 2.625rem;
+}
+.h--med{
+  font-size: 1.2rem;
+}
+.h--small{
+  font-size: 0.8rem;
+}
+.h-margin--lrg{
+  margin-bottom: calc(8.8rem - 1em);
+}
+
+.project-list{
+  margin-left: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.project-list{
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #b1b1b1;
+}
+.project-list__item{
+  flex: 0 1 calc(50% - 0.5rem);
+  margin-bottom: 3rem;
+}
+
+.pub-list__item{
+  flex: 0 1 calc(100% - 0.5rem);
+  margin-bottom: 3rem;
+}
+
+@media only screen and (min-width: 600px) {
+  
+  .header{
+    margin-left: 3.5rem;
+  }
+  .main{
+    padding: 4.5rem;
+  }
+  
+}
+
+
 
 
 
