@@ -94,6 +94,8 @@ img{
 
 
 
+.groww { transition: all .2s ease-in-out; }
+.groww:hover { transform: scale(1.02); }
 
 
 /*===== LAYOUT =====*/
