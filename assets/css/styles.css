@@ -871,7 +871,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', end
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-bottom: 1px solid #b1b1b1;
 }
 .project-list__item{
   flex: 0 1 calc(50% - 0.5rem);
